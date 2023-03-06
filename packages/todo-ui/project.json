@@ -51,6 +51,9 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "proxyConfig": "packages/todo-ui/proxy.conf.json"
+      },
       "configurations": {
         "production": {
           "browserTarget": "todo-ui:build:production"
