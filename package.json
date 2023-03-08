@@ -2,7 +2,10 @@
   "name": "fuzzy",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "db:docker:build": "docker build -t todo-postgres-db -f packages/todo-api/Dockerfile ./",
+    "db:docker:run": "docker run -d --name todo-postgresdb-container -p 5431:5432 todo-postgres-db"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "~15.2.0",
@@ -25,6 +28,7 @@
     "@nrwl/webpack": "15.8.5",
     "@schematics/angular": "~15.2.0",
     "@types/jest": "^29.4.0",
+    "@types/js-yaml": "^4.0.5",
     "@types/node": "~18.7.1",
     "cypress": "^12.2.0",
     "eslint-plugin-cypress": "^2.10.3",
@@ -51,12 +55,17 @@
     "@angular/platform-browser-dynamic": "~15.2.0",
     "@angular/router": "~15.2.0",
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/typeorm": "^9.0.1",
     "axios": "^1.0.0",
+    "js-yaml": "^4.1.0",
+    "pg": "^8.10.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
     "tslib": "^2.3.0",
+    "typeorm": "^0.3.12",
     "zone.js": "~0.12.0"
   }
 }

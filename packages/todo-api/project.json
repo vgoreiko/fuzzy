@@ -13,7 +13,14 @@
         "outputPath": "dist/packages/todo-api",
         "main": "packages/todo-api/src/main.ts",
         "tsConfig": "packages/todo-api/tsconfig.app.json",
-        "assets": ["packages/todo-api/src/assets"],
+        "assets": [
+          "packages/todo-api/src/assets",
+          {
+            "glob": "**/*",
+            "input": "packages/todo-api/src/config",
+            "output": "config"
+          }
+        ],
         "isolatedConfig": true,
         "webpackConfig": "packages/todo-api/webpack.config.js"
       },
