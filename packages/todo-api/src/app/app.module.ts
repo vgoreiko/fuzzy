@@ -4,6 +4,8 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { dbConfiguration, configuration } from "../config";
+import { CoreModule } from "./core";
+import { TodoModule } from "./todo";
 
 @Module({
   imports: [
@@ -15,7 +17,9 @@ import { dbConfiguration, configuration } from "../config";
         useFactory: dbConfiguration,
         inject: [ConfigService]
       }
-    )
+    ),
+    CoreModule,
+    TodoModule,
   ],
   controllers: [AppController],
   providers: [AppService]

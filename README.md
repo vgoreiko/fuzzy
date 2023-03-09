@@ -34,3 +34,10 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 `nx lint my-nest-app`
 
 `nx lint my-nest-lib`
+
+## Swagger
+`http://localhost:3333/api`
+
+
+## TODO
+- is Joi needed?

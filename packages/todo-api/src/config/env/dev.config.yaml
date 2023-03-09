@@ -1,6 +1,7 @@
 http:
   host: 'localhost'
-  port: 8080
+  port: 3333
+  globalPrefix: 'api'
 
 db:
   type: 'postgres'
