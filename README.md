@@ -42,3 +42,4 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 ## TODO
 - is Joi needed?
 - add helmet (csp, cors)
+- crypt user password
