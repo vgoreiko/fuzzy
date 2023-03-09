@@ -1,5 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { TodoPriorityEnum } from "../enums";
+import { IsEnum, IsInt, Length, Min } from "class-validator";
 
 @Entity()
 export class TodoEntity {
@@ -7,18 +8,21 @@ export class TodoEntity {
     type: 'bigint',
     name: 'id',
   })
+  @IsInt()
+  @Min(0)
   id: number;
 
   @Column({
     type: 'varchar',
     nullable: false,
-    length: 30
   })
+  @Length(1, 100)
   name: string;
 
   @Column({
     length: 200,
   })
+  @Length(0, 200)
   description: string;
 
   @Column({
@@ -26,5 +30,6 @@ export class TodoEntity {
     enum: TodoPriorityEnum,
     default: TodoPriorityEnum.Low,
   })
+  @IsEnum(TodoPriorityEnum)
   priority?: TodoPriorityEnum;
 }
