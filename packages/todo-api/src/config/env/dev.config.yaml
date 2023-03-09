@@ -12,4 +12,5 @@ db:
   entities: []
   username: 'postgres'
   password: 'docker'
+  migrations: ['dist/migrations/*{.ts,.js}']
 

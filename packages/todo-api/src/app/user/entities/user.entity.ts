@@ -23,9 +23,9 @@ export class UserEntity {
   @IsEmail()
   email: string;
 
-  @Column({
-    nullable: false,
-  })
-  @IsStrongPassword()
-  password: string;
+  // @Column({
+  //   nullable: false,
+  // })
+  // @IsStrongPassword()
+  // password: string;
 }

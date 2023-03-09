@@ -19,6 +19,11 @@
             "glob": "**/*",
             "input": "packages/todo-api/src/config",
             "output": "config"
+          },
+          {
+            "glob": "**/*",
+            "input": "packages/todo-api/src/migrations",
+            "output": "migrations"
           }
         ],
         "isolatedConfig": true,
