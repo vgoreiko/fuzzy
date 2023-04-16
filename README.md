@@ -27,13 +27,13 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 
 ## Base commands API
-`nx build my-nest-app`
+`nx build todo-api`
 
-`nx serve my-nest-app`
+`nx serve todo-api`
 
-`nx lint my-nest-app`
+`nx lint todo-api`
 
-`nx lint my-nest-lib`
+`nx lint todo-api`
 
 ## Swagger
 `http://localhost:3333/api`

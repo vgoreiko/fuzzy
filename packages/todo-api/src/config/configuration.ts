@@ -4,8 +4,9 @@ import { join } from 'path';
 import { Environments } from "./environments.enum";
 
 export const getConfigFileName = () => {
-  if (!process.env.NODE_ENV) return 'default';
-  const fromEnum = Environments[process.env.NODE_ENV];
+  if (!process.env.NODE_ENV) return Environments.dev;
+  const env: Environments = <Environments>process.env.NODE_ENV;
+  const fromEnum = Environments[env];
   return fromEnum || Environments.dev;
 };
 
