@@ -12,5 +12,5 @@ db:
   entities: []
   username: 'postgres'
   password: 'docker'
-  migrations: ['dist/migrations/*{.ts,.js}']
+  migrations: ['../dist/packages/todo-api/migrations/*{.ts,.js}']
 

@@ -68,6 +68,34 @@
           "codeCoverage": true
         }
       }
+    },
+
+    "build-migration-config": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/todo-api/migrations",
+        "main": "packages/todo-api/src/config/typeorm.config.ts",
+        "tsConfig": "packages/todo-api/tsconfig.app.json"
+      }
+    },
+    "typeorm-generate-migration": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "cwd": "packages/todo-api/src/migrations",
+        "commands": ["typeorm -d ../../../../dist/packages/todo-api/migrations/main.js migration:generate"]
+      },
+      "dependsOn": ["build-migration-config"]
+    },
+    "typeorm-run-migrations": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "cwd": "packages/todo-api/src/migrations",
+        "commands": ["typeorm -d ../../../../dist/packages/todo-api/migrations/main.js migration:run"]
+      },
+      "dependsOn": ["build","build-migration-config"]
     }
   },
   "tags": []

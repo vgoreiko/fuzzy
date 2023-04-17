@@ -5,9 +5,8 @@ import { TodoEntity } from '../app/todo';
 
 const config = configuration();
 const typeormConfig = config.db;
-console.log(typeormConfig);
-const { type, host, port, username, password, database } = typeormConfig;
-
+const { type, host, port, username, password, database, migrations } = typeormConfig;
+console.log('migrations:', migrations);
 export const connectionSource = new DataSource({
   type,
   host,
@@ -16,4 +15,5 @@ export const connectionSource = new DataSource({
   password,
   database,
   entities: [UserEntity, TodoEntity],
+  migrations,
 });

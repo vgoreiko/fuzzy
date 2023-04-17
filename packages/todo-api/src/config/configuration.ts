@@ -10,7 +10,7 @@ export const getConfigFileName = () => {
   return fromEnum || Environments.dev;
 };
 
-const YAML_CONFIG_FILENAME = `config/env/${getConfigFileName()}.config.yaml`;
+const YAML_CONFIG_FILENAME = `../config/env/${getConfigFileName()}.config.yaml`;
 
 export const configuration = () => {
   return yaml.load(

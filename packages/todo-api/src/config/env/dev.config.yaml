@@ -9,8 +9,7 @@ db:
   port: 5431
   database: 'todoApp'
   synchronize: true
-  entities: []
+  entities: ["../dist/packages/todo-api/**/*.entity{ .ts,.js}"]
   username: 'postgres'
   password: 'docker'
-  migrations: ['dist/migrations/*{.ts,.js}']
-
+  "migrations": ["../dist/packages/todo-api/migrations/*{.ts,.js}"]

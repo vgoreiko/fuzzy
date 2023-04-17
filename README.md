@@ -40,13 +40,17 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 ## Migrations
 ##### create in todo-api  
-`typeorm migration:create -n {migrationName} -d {migrationFolder}`
+`nx run todo-api:typeorm-generate-migration {name}`
+
+#### run migrations for todo-api
+`nx run todo-api:typeorm-run-migrations`
 
 ##### example  
 `typeorm migration:create -n initUserAndTodoTables -d ./src/migrations`
 
 #### run in todo-api
 `typeorm migration:run -- -d path-to-datasource-config`
+
 
 ## TODO
 - is Joi needed?

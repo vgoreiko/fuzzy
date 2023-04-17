@@ -2,12 +2,10 @@
   "name": "fuzzy",
   "version": "0.0.0",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "db:docker:build": "docker build -t todo-postgres-db -f packages/todo-api/Dockerfile ./",
     "db:docker:run": "docker run -d --name todo-postgresdb-container -p 5431:5432 todo-postgres-db",
-    "typeorm": "ts-node --project tsconfig.base.json ./node_modules/typeorm/cli",
-    "typeorm:run-migrations": "npm run typeorm migration:run -- -d packages/todo-api/src/config/typeorm.config.ts"
+    "run:migrations": "nx run todo-api:typeorm-run-migrations"
   },
   "private": true,
   "devDependencies": {
