@@ -5,11 +5,11 @@ http:
 
 db:
   type: 'postgres'
-  url: 'localhost'
+  url: 'host.docker.internal'
   port: 5431
   database: 'todoApp'
   synchronize: true
-  entities: ["../dist/packages/todo-api/**/*.entity{ .ts,.js}"]
+  entities: ['dist/packages/todo-api/**/*.entity.ts}']
   username: 'postgres'
   password: 'docker'
-  "migrations": ["../dist/packages/todo-api/migrations/*{.ts,.js}"]
+  migrations: ['packages/src/todo-api/migrations/**/*.ts']
