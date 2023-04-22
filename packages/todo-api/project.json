@@ -93,9 +93,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "cwd": "packages/todo-api/src/migrations",
-        "commands": ["typeorm -d ../../../../dist/packages/todo-api/_migrations/main.js migration:run"]
+        "commands": ["npx typeorm migration:run -d ../../../../dist/packages/todo-api/_migrations/main.js"]
       },
-      "dependsOn": ["build","build-migration-config"]
+      "dependsOn": ["build-migration-config"]
     }
   },
   "tags": []

@@ -41,9 +41,13 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 ## Migrations
 ##### create in todo-api  
 `nx run todo-api:typeorm-generate-migration {name}`
+or
+`npm run migrations:generate {name}`
 
 #### run migrations for todo-api
 `nx run todo-api:typeorm-run-migrations`
+or
+`npm run migrations:run`
 
 ##### example  
 `typeorm migration:create -n initUserAndTodoTables -d ./src/migrations`
