@@ -16,12 +16,12 @@
         "assets": [
           "packages/todo-api/src/assets",
           {
-            "glob": "**/*",
-            "input": "packages/todo-api/src/config",
-            "output": "config"
+            "glob": "**/*.yaml",
+            "input": "packages/todo-api/src/env",
+            "output": "env"
           },
           {
-            "glob": "**/*",
+            "glob": "**/*.ts",
             "input": "packages/todo-api/src/migrations",
             "output": "migrations"
           }
@@ -74,9 +74,11 @@
       "executor": "@nrwl/node:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/todo-api/_migrations",
+        "outputPath": "dist/packages/todo-api",
         "main": "packages/todo-api/src/config/typeorm.config.ts",
-        "tsConfig": "packages/todo-api/tsconfig.app.json"
+        "tsConfig": "packages/todo-api/tsconfig.app.json",
+        "outputFileName": "typeorm",
+        "deleteOutputPath": false
       }
     },
     "typeorm-generate-migration": {
@@ -84,7 +86,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "cwd": "packages/todo-api/src/migrations",
-        "commands": ["typeorm -d ../../../../dist/packages/todo-api/_migrations/main.js migration:generate"]
+        "commands": ["typeorm -d ../../../../dist/packages/todo-api/typeorm.js migration:generate"]
       },
       "dependsOn": ["build-migration-config"]
     },
@@ -93,7 +95,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "cwd": "packages/todo-api/src/migrations",
-        "commands": ["npx typeorm migration:run -d ../../../../dist/packages/todo-api/_migrations/main.js"]
+        "commands": ["npx typeorm migration:run -d ../../../../dist/packages/todo-api/typeorm.js"]
       },
       "dependsOn": ["build-migration-config"]
     }

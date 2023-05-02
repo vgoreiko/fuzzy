@@ -5,8 +5,11 @@
   "scripts": {
     "db:docker:build": "docker build -t todo-postgres-db -f packages/todo-api/Dockerfile ./",
     "db:docker:run": "docker run -d --name todo-postgresdb-container -p 5431:5432 todo-postgres-db",
-    "migrations:run": "nx run todo-api:typeorm-run-migrations",
-    "migrations:generate": "nx run todo-api:typeorm-generate-migration"
+    "todoApi:migrations:buildConfig": "nx run todo-api:build-migration-config",
+    "todoApi:migrations:run": "nx run todo-api:typeorm-run-migrations",
+    "todoApi:migrations:generate": "nx run todo-api:typeorm-generate-migration",
+    "todoApi:build": "nx build todo-api",
+    "todoApi:serve": "nx serve todo-api"
   },
   "private": true,
   "devDependencies": {

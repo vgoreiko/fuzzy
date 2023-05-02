@@ -33,8 +33,6 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 `nx lint todo-api`
 
-`nx lint todo-api`
-
 ## Swagger
 `http://localhost:3333/api`
 
@@ -61,5 +59,4 @@ or
 - add helmet (csp, cors)
 - crypt user password
 - fix migrationsPath from config.yaml
-- run migration. Help https://github.com/nestjs/nest/issues/4990#issuecomment-711444802
 - nx and typeorm migrations https://www.thisdot.co/blog/setting-up-typeorm-migrations-in-an-nx-nestjs-project
